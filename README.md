@@ -39,7 +39,7 @@ Before you can run the helloTodo application, you must set up a mobile backend f
   The following procedure shows you how to create a MobileFirst Services Starter application. Using the boilerplate to create your app automatically performs the following actions:
 
 * Provisions a Node.js runtime and populates it with with a default helloTodo application that was created with StrongLoop. This application uses the LoopBack framework to expose the `/api/Items` API, which is used by both the Web UI and the helloTodo app sample from this Github repository.
-* Adds the following services to the app: Cloudant&reg; NoSQL DB, IBM Push Notifications, and Mobile Client Access.
+* Adds the following services to the app: Cloudant&reg; NoSQL DB, IBM Push Notifications, and App ID.
 
 #### Create a mobile backend in the  Bluemix dashboard
 
@@ -50,7 +50,7 @@ Before you can run the helloTodo application, you must set up a mobile backend f
 
 #### Access the StrongLoop backend app
 1. Open the **appRoute** URL that you copied from the Bluemix dashboard in your browser. You will see the web interface for the helloTodo backend.
-2. Start by following the guided experience steps that are described in the web UI. <br/>Eventually, you will try to DELETE a todo item and will discover that this action can only be complete when using the helloTodo mobile apps sample from this Github repository.The mobile backend is protected by a Mobile Client Access by default.  Mobile Client Access is a Bluemix service that provides security and monitoring functionality for mobile backend applications.
+2. Start by following the guided experience steps that are described in the web UI. <br/>Eventually, you will try to DELETE a todo item and will discover that this action can only be complete when using the helloTodo mobile apps sample from this Github repository.The mobile backend is protected by a App ID by default.  App ID is a Bluemix service that provides security and monitoring functionality for mobile backend applications.
 
 > **Tip:** Click the **View API Reference** button on web UI to see the API specs.
 
@@ -86,14 +86,14 @@ In Xcode, click **Product > Run**.
 The helloTodo sample is a single view application with a simple list of to do items. If you previously added data through your web application, you will see the data is automatically pulled into the application.
 
 #### Modify to do items in the iOS app
-You can create, add and modify items directly in the application. This sample uses Bluemix Mobile Services SDK, which knows how to handle Mobile Client Access security. Therefore, unlike the web application, you can also DELETE items from mobile app by swiping them. You can also mark items as completed by clicking to the left of the corresponding to do item. When you update an item in the mobile app it will automatically be updated in the web app (you need to refresh the web app). If you make a change in the web UI and want to see it reflected in the mobile app, pull down the todo list to refresh.
+You can create, add and modify items directly in the application. This sample uses Bluemix Mobile Services SDK, which knows how to handle App ID security. Therefore, unlike the web application, you can also DELETE items from mobile app by swiping them. You can also mark items as completed by clicking to the left of the corresponding to do item. When you update an item in the mobile app it will automatically be updated in the web app (you need to refresh the web app). If you make a change in the web UI and want to see it reflected in the mobile app, pull down the todo list to refresh.
 
 ### Add authentication to your app
-As you recall, the DELETE endpoint can only be accessed by mobile applications because it is protected by the Mobile Client Access service.
+As you recall, the DELETE endpoint can only be accessed by mobile applications because it is protected by the App ID service.
 
-By default, Mobile Client Access is not configured to require any interactive authentication (for example, to ask for username and password).
+By default, App ID is not configured to require any interactive authentication (for example, to ask for username and password).
 
-The next step is to learn how to configure authentication with the Mobile Client Access dashboard and instrument your app with required components. For more information, see the  [Mobile Client Access documentation](https://www.bluemix.net/docs/services/mobileaccess/index.html) and [HelloAuthentication sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloauthentication).
+The next step is to learn how to configure authentication with the App ID dashboard and instrument your app with required components. For more information, see the  [App ID documentation](https://www.bluemix.net/docs/services/appid/index.html) and [HelloAuthentication sample](https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloauthentication).
 
 
 ### Xcode requirement
